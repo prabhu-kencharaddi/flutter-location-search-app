@@ -1,0 +1,7 @@
+flutter_native_splash:
+  image: assets/splasher_img.jpeg
+  color: "#42a5f5"
+  # fill: true
+  android: true
+  ios: true
+  timer: 1
