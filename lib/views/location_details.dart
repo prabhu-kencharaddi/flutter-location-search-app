@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
 import '../models/location.dart';
 
 
@@ -24,37 +22,9 @@ class LocationDetails extends StatelessWidget {
       body: Column(
         children: [
           // Map in the top half of the screen
-          Expanded(
+          const Expanded(
             flex: 1,
-            child: FlutterMap(
-              options: MapOptions(
-                initialCenter:
-                    LatLng(location.geometry.lat, location.geometry.lng),
-                minZoom: 14.0,
-              ),
-              children: [
-                TileLayer(
-                  urlTemplate:
-                      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  subdomains: const ['a', 'b', 'c'],
-                ),
-                MarkerLayer(
-                  markers: [
-                    Marker(
-                      width: 200.0,
-                      height: 200.0,
-                      alignment: Alignment.center,
-                      point:
-                          LatLng(location.geometry.lat, location.geometry.lng),
-                      child: const Icon(Icons.location_on,
-                          size: 60.0,
-                          color: Colors.blue,
-                          key: Key('location_icon')),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            child: Text('Map goes here'),
           ),
           // Details in the bottom half of the screen
           Expanded(
